@@ -2,6 +2,9 @@ package uy.com.sofka.microservicio1.model;
 
 import java.util.Objects;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "productos")
 public class Producto {
   
   private String id;
