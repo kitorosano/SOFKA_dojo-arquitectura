@@ -22,14 +22,7 @@ public class ProductoController {
   private IProductoService service;
 
   @GetMapping("")
-  public ResponseEntity<?> listar() {
-    try {
-      List<Producto> productos = service.listar();
-      if (productos.isEmpty()) 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-      return new ResponseEntity<List<Producto>>(productos, HttpStatus.OK);
-    } catch (Exception e) {
-      return new ResponseEntity<String>("Error al listar productos", HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  List<Producto> listar() {
+    return service.listar();
   }
 }
